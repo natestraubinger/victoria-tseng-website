@@ -1027,20 +1027,44 @@
     }
 
     // Form Submission Handler
-    function handleFormSubmit(e) {
+    async function handleFormSubmit(e) {
       e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      const dataObj = {
+        _subject: 'VictoriaTseng Website Inquiry',
+        _template: 'table',
+        'Page Source': window.location.href,
+        'Submitted At': new Date().toLocaleString()
+      };
+      formData.forEach((value, key) => {
+        if (!key.startsWith('_')) {
+          dataObj[key] = value;
+        }
+      });
+
+      try {
+        await fetch('https://formsubmit.co/ajax/victoria@grubbco.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(dataObj)
+        });
+      } catch(err) { console.warn('FormSubmit response:', err); }
+
       const formCard = document.querySelector('.hero-form-card');
-      formCard.innerHTML = `
-        <div style="text-align: center; padding: 2rem 1rem;">
-          <div style="width: 60px; height: 60px; background: #C8374B; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; box-shadow: 0 0 25px rgba(200,55,75,0.5);">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      if (formCard) {
+        formCard.innerHTML = `
+          <div style="text-align: center; padding: 2rem 1rem;">
+            <div style="width: 60px; height: 60px; background: #C8374B; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; box-shadow: 0 0 25px rgba(200,55,75,0.5);">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 style="color: white; font-size: 1.8rem; margin-bottom: 0.75rem; font-family: 'Cormorant Garamond', serif;">Strategy Consultation Requested!</h3>
+            <p style="color: #E8CDD8; font-size: 0.95rem; line-height: 1.6;">
+              Thank you! Victoria Tseng will personally review your details and contact you shortly.
+            </p>
           </div>
-          <h3 style="color: white; font-size: 1.8rem; margin-bottom: 0.75rem; font-family: 'Cormorant Garamond', serif;">Strategy Consultation Requested!</h3>
-          <p style="color: #E8CDD8; font-size: 0.95rem; line-height: 1.6;">
-            Thank you! Victoria Tseng will personally review your home details and contact you shortly to schedule your custom V-Factor™ valuation session.
-          </p>
-        </div>
-      `;
+        `;
+      }
     }
   </script>
 </body>

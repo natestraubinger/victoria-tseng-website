@@ -193,37 +193,89 @@ function initTestimonialSlider() {
   startAutoplay();
 }
 
-/* --- Contact Form --- */
+/* --- Contact Form Handling --- */
 function initContactForm() {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
+  const forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    // Add hidden input for subject if not present
+    if (!form.querySelector('input[name="_subject"]')) {
+      const subjectInput = document.createElement('input');
+      subjectInput.type = 'hidden';
+      subjectInput.name = '_subject';
+      subjectInput.value = 'VictoriaTseng Website Inquiry';
+      form.appendChild(subjectInput);
+    }
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    const submitBtn = form.querySelector('.form-submit .btn');
-    const originalText = submitBtn.textContent;
+      const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('.btn');
+      const originalText = submitBtn ? submitBtn.textContent : 'Submit';
 
-    // Simple visual feedback
-    submitBtn.textContent = 'Sending...';
-    submitBtn.style.opacity = '0.7';
-    submitBtn.style.pointerEvents = 'none';
+      if (submitBtn) {
+        submitBtn.textContent = 'Sending...';
+        submitBtn.style.opacity = '0.7';
+        submitBtn.style.pointerEvents = 'none';
+      }
 
-    // Simulate submission (replace with actual form handling)
-    setTimeout(() => {
-      submitBtn.textContent = '✓ Message Sent!';
-      submitBtn.style.background = '#2D7D46';
-      submitBtn.style.borderColor = '#2D7D46';
-      submitBtn.style.opacity = '1';
+      // Collect form data
+      const formData = new FormData(form);
+      const dataObj = {
+        _subject: 'VictoriaTseng Website Inquiry',
+        _template: 'table',
+        'Page Source': window.location.href,
+        'Submitted At': new Date().toLocaleString()
+      };
 
-      setTimeout(() => {
-        form.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.style.background = '';
-        submitBtn.style.borderColor = '';
-        submitBtn.style.pointerEvents = '';
-      }, 3000);
-    }, 1500);
+      formData.forEach((value, key) => {
+        if (!key.startsWith('_')) {
+          dataObj[key] = value;
+        }
+      });
+
+      try {
+        // Send email notification to victoria@grubbco.com
+        await fetch('https://formsubmit.co/ajax/victoria@grubbco.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(dataObj)
+        });
+      } catch (err) {
+        console.warn('FormSubmit network response:', err);
+      }
+
+      // Show user success message
+      if (form.id === 'heroLeadForm' && document.querySelector('.hero-form-card')) {
+        const formCard = document.querySelector('.hero-form-card');
+        formCard.innerHTML = `
+          <div style="text-align: center; padding: 2rem 1rem;">
+            <div style="width: 60px; height: 60px; background: #C8374B; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; box-shadow: 0 0 25px rgba(200,55,75,0.5);">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 style="color: white; font-size: 1.8rem; margin-bottom: 0.75rem; font-family: 'Cormorant Garamond', serif;">Strategy Consultation Requested!</h3>
+            <p style="color: #E8CDD8; font-size: 0.95rem; line-height: 1.6;">
+              Thank you! Your details have been submitted. Victoria Tseng will personally review your information and contact you shortly.
+            </p>
+          </div>
+        `;
+      } else if (submitBtn) {
+        submitBtn.textContent = '✓ Inquiry Sent!';
+        submitBtn.style.background = '#2D7D46';
+        submitBtn.style.borderColor = '#2D7D46';
+        submitBtn.style.opacity = '1';
+
+        setTimeout(() => {
+          form.reset();
+          submitBtn.textContent = originalText;
+          submitBtn.style.background = '';
+          submitBtn.style.borderColor = '';
+          submitBtn.style.pointerEvents = '';
+        }, 4000);
+      }
+    });
   });
 }
 
