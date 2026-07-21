@@ -6,6 +6,16 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/oakland-real-estate-agent",
+        "destination": "/oakland-real-estate-agent.html"
+      },
+      {
+        "source": "/Oakland-real-estate-agent",
+        "destination": "/oakland-real-estate-agent.html"
+      }
     ]
   }
 }
