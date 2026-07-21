@@ -1916,3 +1916,271 @@ p {
   }
 }
 
+/* ============================================================
+   Victoria & Shelly Duo Page Styling (Brand Matched)
+   ============================================================ */
+
+/* Duo About Section */
+.duo-about-section {
+  padding: var(--space-2xl) 0;
+  background-color: var(--white);
+}
+
+.duo-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.duo-portrait-wrapper {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.duo-portrait-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.duo-portrait-accent {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--coral);
+  border-radius: var(--radius-md);
+  z-index: -1;
+}
+
+.duo-about-content h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.duo-about-content p {
+  color: var(--gray-700);
+  font-size: 1.05rem;
+  margin-bottom: var(--space-md);
+  line-height: 1.85;
+}
+
+/* Bios Cards */
+.duo-bios-section {
+  padding: var(--space-2xl) 0;
+  background-color: var(--cream);
+}
+
+.duo-bios-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.duo-bio-card {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border-top: 4px solid var(--coral);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.duo-bio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.duo-bio-card h3 {
+  font-size: 1.8rem;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+.duo-bio-role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: var(--space-md);
+  display: block;
+}
+
+.duo-bio-card p {
+  color: var(--gray-700);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-md);
+}
+
+.duo-bio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.duo-bio-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  background: rgba(200, 55, 75, 0.08);
+  color: var(--coral);
+  border-radius: var(--radius-sm);
+}
+
+/* Why Work With Us */
+.duo-why-section {
+  padding: var(--space-2xl) 0;
+  background-color: var(--white);
+}
+
+.duo-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.duo-why-card {
+  padding: var(--space-lg);
+  background: var(--cream);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.duo-why-card:hover {
+  border-color: var(--coral);
+  transform: translateY(-4px);
+}
+
+.duo-why-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(200, 55, 75, 0.1);
+  color: var(--coral);
+}
+
+.duo-why-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.duo-why-card h3 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: var(--space-xs);
+}
+
+.duo-why-card p {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+/* Combined Stats */
+.duo-stats-section {
+  padding: var(--space-xl) 0;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.duo-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.duo-stat-item {
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.duo-stat-number {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--coral);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.duo-stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mauve-light);
+}
+
+/* Territory Areas */
+.duo-areas-section {
+  padding: var(--space-2xl) 0;
+  background: var(--cream);
+}
+
+.duo-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.duo-area-card {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+  text-align: center;
+  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.duo-area-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--coral);
+  box-shadow: var(--shadow-md);
+}
+
+.duo-area-card span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--coral);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.duo-area-card h3 {
+  font-size: 1.5rem;
+  color: var(--navy);
+}
+
+@media (max-width: 992px) {
+  .duo-about-grid { grid-template-columns: 1fr; }
+  .duo-bios-grid { grid-template-columns: 1fr; }
+  .duo-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .duo-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .duo-areas-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+  .duo-why-grid { grid-template-columns: 1fr; }
+  .duo-areas-grid { grid-template-columns: 1fr; }
+}
+
+
