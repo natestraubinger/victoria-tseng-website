@@ -8,7 +8,7 @@
   <meta name="keywords" content="Victoria Tseng, Shelly Flynn, East Bay real estate, Piedmont, Berkeley, Oakland, The Grubb Company, luxury homes, real estate team">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Victoria Tseng & Shelly Flynn | East Bay Real Estate Duo">
+  <meta property="og:title" content="Victoria Tseng &amp; Shelly Flynn | East Bay Real Estate Duo">
   <meta property="og:description" content="Two powerhouse realtors. One unstoppable team. Combining 50+ years of East Bay luxury real estate expertise.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/images/victoria-shelly-duo.jpg">
@@ -18,8 +18,285 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Core Brand Stylesheet -->
+  <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* Custom enhancements for the Duo Page to eliminate empty space and maximize rich aesthetics */
+    .duo-trust-strip {
+      background: var(--navy-dark);
+      border-y: 1px solid rgba(255,255,255,0.1);
+      padding: var(--space-md) 0;
+      color: var(--white);
+    }
+    .duo-trust-flex {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      text-align: center;
+    }
+    .duo-trust-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--mauve-light);
+    }
+    .duo-trust-item svg {
+      color: var(--coral);
+    }
+
+    /* Side-by-side agent bios */
+    .agent-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
+    }
+    .agent-profile-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .agent-profile-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--coral);
+    }
+    .agent-card-header {
+      background: var(--navy);
+      color: var(--white);
+      padding: var(--space-lg);
+      position: relative;
+    }
+    .agent-card-header h3 {
+      color: var(--white);
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+    }
+    .agent-card-title {
+      color: var(--coral);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .agent-card-body {
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      flex: 1;
+    }
+    .agent-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .agent-highlight-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+    .agent-highlight-item svg {
+      color: var(--coral);
+      flex-shrink: 0;
+    }
+
+    /* Comparison Table */
+    .duo-comparison {
+      background: var(--cream);
+      padding: var(--space-2xl) 0;
+    }
+    .comparison-table-wrapper {
+      max-width: 900px;
+      margin: var(--space-xl) auto 0;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-200);
+    }
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.5fr;
+      padding: var(--space-md) var(--space-lg);
+      border-bottom: 1px solid var(--gray-200);
+      align-items: center;
+    }
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+    .comparison-row.header-row {
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+    .comparison-row.header-row .col-duo {
+      color: var(--coral);
+    }
+    .col-feature {
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .col-solo {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+    }
+    .col-duo {
+      color: var(--navy-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .col-duo svg {
+      color: var(--coral);
+    }
+
+    /* Territory Grid with Rich Visual Cards */
+    .territory-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+    .territory-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base);
+    }
+    .territory-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--coral);
+    }
+    .territory-img-box {
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+    .territory-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .territory-card:hover .territory-img-box img {
+      transform: scale(1.05);
+    }
+    .territory-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(17, 29, 53, 0.85);
+      backdrop-filter: blur(4px);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+    }
+    .territory-body {
+      padding: var(--space-md);
+    }
+    .territory-body h3 {
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .territory-body p {
+      font-size: 0.88rem;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+
+    /* FAQ Accordion Section */
+    .duo-faq {
+      padding: var(--space-2xl) 0;
+      background: var(--white);
+    }
+    .faq-wrapper {
+      max-width: 800px;
+      margin: var(--space-xl) auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .faq-item {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--cream);
+      transition: border-color var(--transition-fast);
+    }
+    .faq-item.active {
+      border-color: var(--coral);
+      background: var(--white);
+    }
+    .faq-question {
+      width: 100%;
+      padding: var(--space-md) var(--space-lg);
+      text-align: left;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+    }
+    .faq-icon {
+      font-size: 1.5rem;
+      color: var(--coral);
+      transition: transform var(--transition-fast);
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 var(--space-lg);
+      font-size: 0.95rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 var(--space-lg) var(--space-lg);
+    }
+
+    @media (max-width: 992px) {
+      .agent-card-grid { grid-template-columns: 1fr; }
+      .territory-grid { grid-template-columns: repeat(2, 1fr); }
+      .comparison-row { grid-template-columns: 1.5fr 1fr 1fr; font-size: 0.85rem; }
+    }
+    @media (max-width: 600px) {
+      .territory-grid { grid-template-columns: 1fr; }
+      .comparison-row { grid-template-columns: 1fr; gap: 0.25rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -31,10 +308,11 @@
       </a>
 
       <div class="nav-links" id="navLinks">
-        <a href="#about">About Us</a>
-        <a href="#why">Why Work With Us</a>
-        <a href="#areas">Territory</a>
-        <a href="#testimonials">Testimonials</a>
+        <a href="#about">About the Duo</a>
+        <a href="#agents">Meet Agents</a>
+        <a href="#why">Duo Advantage</a>
+        <a href="#territory">Territory</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
         <div class="nav-cta">
           <a href="#contact" class="btn btn-primary">Work With Us</a>
@@ -57,12 +335,12 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <span class="hero-label">East Bay Premier Real Estate Partnership</span>
-      <h1>Victoria Tseng <span style="font-style: italic; color: var(--mauve);">amp;</span> Shelly Flynn</h1>
+      <h1>Victoria Tseng &amp; Shelly Flynn</h1>
       <hr class="hero-divider">
-      <p class="hero-tagline">Two powerhouse realtors. One unstoppable team. Global perspective meets deep East Bay expertise.</p>
+      <p class="hero-tagline">Two powerhouse realtors. One unstoppable team. Global perspective meets deep East Bay local mastery.</p>
       <div class="hero-buttons">
         <a href="#contact" class="btn btn-primary">Work With Us</a>
-        <a href="#about" class="btn btn-outline">Meet the Duo</a>
+        <a href="#about" class="btn btn-outline">Discover the Duo</a>
       </div>
     </div>
     <div class="hero-scroll">
@@ -71,208 +349,529 @@
     </div>
   </section>
 
+  <!-- ==================== TRUST STRIP ==================== -->
+  <div class="duo-trust-strip">
+    <div class="container">
+      <div class="duo-trust-flex">
+        <div class="duo-trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>50+ Years Combined Experience</span>
+        </div>
+        <div class="duo-trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>$200M+ East Bay Sales Volume</span>
+        </div>
+        <div class="duo-trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>The Grubb Company Partnership</span>
+        </div>
+        <div class="duo-trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Cornell Law &amp; Sotheby's Alumni</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ==================== ABOUT THE DUO ==================== -->
-  <section class="duo-about-section" id="about">
+  <section class="about" id="about">
     <div class="container">
-      <div class="duo-about-grid">
-        <div class="duo-portrait-wrapper reveal-left">
-          <img src="/images/victoria-shelly-duo.jpg" alt="Victoria Tseng and Shelly Flynn together" class="duo-portrait-img">
+      <div class="about-grid">
+        <div class="about-image-wrapper reveal-left">
+          <img src="/images/victoria-shelly-duo.jpg" alt="Victoria Tseng and Shelly Flynn together" class="about-image">
+          <div class="about-image-accent"></div>
         </div>
-        <div class="duo-about-content reveal-right">
+        <div class="about-content reveal-right">
           <span class="section-label">Our Story</span>
-          <h2 class="section-title">Stronger Together</h2>
+          <h2 class="section-title">Stronger Together:<br>A Powerhouse Partnership</h2>
           <hr class="section-divider">
-          <p>When Victoria Tseng and Shelly Flynn joined forces, it created a rare synergy in East Bay real estate — a partnership built on complementary strengths, shared values, and a relentless commitment to client success.</p>
-          <p>Victoria brings her global perspective, legal acumen from Cornell Law and Sotheby's, and deep real estate investment expertise. Shelly brings decades of East Bay market mastery, an unparalleled network, and deep community roots through The Grubb Company.</p>
-          <p>Together, they offer clients something no single agent can: <strong>twice the expertise, twice the responsiveness, and twice the negotiating strength</strong> — focused on achieving extraordinary outcomes for buyers and sellers across Piedmont, Berkeley, Oakland, and beyond.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ==================== INDIVIDUAL BIOS ==================== -->
-  <section class="duo-bios-section">
-    <div class="container">
-      <div style="text-align: center;">
-        <span class="section-label">Meet the Partnership</span>
-        <h2 class="section-title">Two Experts. One Unfiltered Commitment.</h2>
-        <hr class="section-divider" style="margin: 1rem auto;">
-      </div>
-      <div class="duo-bios-grid">
-        <div class="duo-bio-card reveal-left">
-          <h3>Victoria Tseng</h3>
-          <span class="duo-bio-role">Realtor® · DRE# 01977600</span>
-          <p>A graduate of UC Berkeley and Cornell Law School, Victoria practiced law before serving as in-house counsel and Director of Business Development for Sotheby's in New York, Paris, London, Beijing, and Hong Kong. She brings sharp legal precision and investment strategy to every transaction.</p>
-          <div class="duo-bio-tags">
-            <span class="duo-bio-tag">Cornell Law</span>
-            <span class="duo-bio-tag">UC Berkeley</span>
-            <span class="duo-bio-tag">NAR GREEN</span>
-            <span class="duo-bio-tag">ABR® Designee</span>
-            <span class="duo-bio-tag">5 Languages</span>
+          <p>When Victoria Tseng and Shelly Flynn joined forces, it created something extraordinary in East Bay real estate — a partnership built on complementary strengths, shared values, and an unwavering commitment to client success.</p>
+
+          <p>Victoria brings her global perspective, legal precision from Cornell Law and Sotheby's, and deep real estate investment acumen. Shelly brings decades of East Bay market mastery, an unparalleled professional network, and deep community roots through The Grubb Company.</p>
+
+          <p>Together, they offer clients something no single agent can: <strong>twice the expertise, twice the responsiveness, and twice the negotiating power</strong> — all dedicated to securing the best possible outcomes for buyers and sellers across Piedmont, Berkeley, Oakland, and beyond.</p>
+
+          <div class="about-designations">
+            <span class="designation-badge">The Grubb Company</span>
+            <span class="designation-badge">Cornell Law</span>
+            <span class="designation-badge">NAR GREEN Designee</span>
+            <span class="designation-badge">ABR® Designee</span>
+            <span class="designation-badge">Top East Bay Producers</span>
           </div>
-        </div>
-        <div class="duo-bio-card reveal-right">
-          <h3>Shelly Flynn</h3>
-          <span class="duo-bio-role">Realtor® · The Grubb Company</span>
-          <p>Shelly Flynn is one of the East Bay's most trusted real estate advisors. Backed by The Grubb Company — the premier residential brokerage in Oakland, Berkeley, and Piedmont — Shelly's deep local roots and market knowledge offer an irreplaceable advantage for her clients.</p>
-          <div class="duo-bio-tags">
-            <span class="duo-bio-tag">The Grubb Company</span>
-            <span class="duo-bio-tag">East Bay Expert</span>
-            <span class="duo-bio-tag">Top Producer</span>
-            <span class="duo-bio-tag">Trusted Advisor</span>
+
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Years Combined Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">$200M+</div>
+              <div class="stat-label">Combined Sales Volume</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Families Served</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== WHY WORK WITH US ==================== -->
-  <section class="duo-why-section" id="why">
+  <!-- ==================== MEET THE AGENTS ==================== -->
+  <section class="duo-comparison" id="agents" style="background: var(--white);">
     <div class="container">
-      <div style="text-align: center;">
-        <span class="section-label">The Duo Advantage</span>
-        <h2 class="section-title">Why Work With Us</h2>
-        <hr class="section-divider" style="margin: 1rem auto;">
+      <div style="text-align: center;" class="reveal">
+        <span class="section-label">Individual Expertise</span>
+        <h2 class="section-title">Meet Your Dedicated Team</h2>
+        <hr class="section-divider" style="margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 auto; color: var(--gray-500);">Two distinct backgrounds coming together for one seamless client experience.</p>
       </div>
-      <div class="duo-why-grid">
-        <div class="duo-why-card">
-          <div class="duo-why-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+
+      <div class="agent-card-grid reveal-stagger">
+        <!-- Victoria Card -->
+        <div class="agent-profile-card">
+          <div class="agent-card-header">
+            <h3>Victoria Tseng</h3>
+            <span class="agent-card-title">Realtor® · DRE# 01977600</span>
+          </div>
+          <div class="agent-card-body">
+            <p>A graduate of UC Berkeley and Cornell Law School, Victoria practiced law before serving as in-house counsel and Director of Business Development for Sotheby's in New York, Paris, London, Beijing, and Hong Kong. She brings sharp legal precision and investment strategy to every client transaction.</p>
+            <div class="agent-highlights">
+              <div class="agent-highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Cornell Law School &amp; UC Berkeley Graduate</span>
+              </div>
+              <div class="agent-highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Former Sotheby's In-House Counsel &amp; Business Director</span>
+              </div>
+              <div class="agent-highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Speaks 5 Languages &amp; Lived in 6 Countries</span>
+              </div>
+              <div class="agent-highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>NAR GREEN &amp; Accredited Buyer's Representative (ABR®)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shelly Card -->
+        <div class="agent-profile-card">
+          <div class="agent-card-header" style="background: var(--navy-dark);">
+            <h3>Shelly Flynn</h3>
+            <span class="agent-card-title">Realtor® · The Grubb Company</span>
+          </div>
+          <div class="agent-card-body">
+            <p>Shelly Flynn is one of the East Bay's most respected real estate advisors. Backed by The Grubb Company — the premier residential brokerage in Oakland, Berkeley, and Piedmont — Shelly's deep local roots and market intuition give clients an irreplaceable advantage in competitive offers.</p>
+            <div class="agent-highlights">
+              <div class="agent-highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Senior Advisor at The Grubb Company</span>
+              </div>
+              <div class="agent-highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Decades of Piedmont, Berkeley &amp; Oakland Market Mastery</span>
+              </div>
+              <div class="agent-highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Extensive Network of Top Local Contractors &amp; Lenders</span>
+              </div>
+              <div class="agent-highlight-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Unrivaled Reputation for Integrity &amp; Fierce Advocacy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMPARISON TABLE ==================== -->
+  <section class="duo-comparison" id="why">
+    <div class="container">
+      <div style="text-align: center;" class="reveal">
+        <span class="section-label">Why 2 Agents Are Better Than 1</span>
+        <h2 class="section-title">The Solo Agent vs. The Duo Team</h2>
+        <hr class="section-divider" style="margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 auto; color: var(--gray-500);">See how hiring a dedicated team accelerates your results without adding any cost.</p>
+      </div>
+
+      <div class="comparison-table-wrapper reveal">
+        <div class="comparison-row header-row">
+          <div>Strategic Advantage</div>
+          <div>Traditional Solo Agent</div>
+          <div class="col-duo">Victoria &amp; Shelly Duo</div>
+        </div>
+        <div class="comparison-row">
+          <div class="col-feature">Availability &amp; Showings</div>
+          <div class="col-solo">Limited to single schedule</div>
+          <div class="col-duo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            24/7 Dual Agent Coverage
+          </div>
+        </div>
+        <div class="comparison-row">
+          <div class="col-feature">Contract &amp; Legal Review</div>
+          <div class="col-solo">Standard form filling</div>
+          <div class="col-duo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Cornell Law Attorney Review
+          </div>
+        </div>
+        <div class="comparison-row">
+          <div class="col-feature">Marketing Reach</div>
+          <div class="col-solo">Standard MLS &amp; local push</div>
+          <div class="col-duo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Grubb Co. Local + Sotheby's Global
+          </div>
+        </div>
+        <div class="comparison-row">
+          <div class="col-feature">Negotiation Leverage</div>
+          <div class="col-solo">Single perspective</div>
+          <div class="col-duo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Dual Negotiating Power
+          </div>
+        </div>
+        <div class="comparison-row">
+          <div class="col-feature">Commission Cost</div>
+          <div class="col-solo">Standard Rate</div>
+          <div class="col-duo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Same Standard Rate (2 for 1)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SPECIALTIES / ADVANTAGES ==================== -->
+  <section class="specialties">
+    <div class="container">
+      <div style="text-align: center;" class="reveal">
+        <span class="section-label">Core Competencies</span>
+        <h2 class="section-title">Six Pillars of Our Success</h2>
+        <hr class="section-divider" style="margin-left: auto; margin-right: auto;">
+      </div>
+
+      <div class="specialties-grid reveal-stagger">
+        <div class="specialty-card">
+          <div class="specialty-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
           <h3>Double the Coverage</h3>
           <p>Two dedicated agents ensure someone is always available to show properties, host open houses, and handle high-stakes negotiations instantly.</p>
         </div>
-        <div class="duo-why-card">
-          <div class="duo-why-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+
+        <div class="specialty-card">
+          <div class="specialty-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
           </div>
           <h3>Global &amp; Local Mastery</h3>
-          <p>Victoria's international luxury network combined with Shelly's deep neighborhood relationships gives your listing maximum exposure.</p>
+          <p>Victoria's international luxury network combined with Shelly's deep East Bay relationships gives your listing maximum exposure to qualified buyers.</p>
         </div>
-        <div class="duo-why-card">
-          <div class="duo-why-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+
+        <div class="specialty-card">
+          <div class="specialty-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>Legal &amp; Contract Precision</h3>
-          <p>Victoria's legal background ensures contracts, disclosures, and offer terms are navigated with meticulous detail and zero vulnerability.</p>
+          <p>Victoria's legal background ensures contracts, disclosures, and offer terms are navigated with meticulous detail and zero financial vulnerability.</p>
         </div>
-        <div class="duo-why-card">
-          <div class="duo-why-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+
+        <div class="specialty-card">
+          <div class="specialty-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
           </div>
           <h3>Client-Centric Philosophy</h3>
           <p>We craft bespoke strategies for every client, prioritizing honest counsel, long-term wealth building, and stress-free transactions.</p>
         </div>
-        <div class="duo-why-card">
-          <div class="duo-why-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+
+        <div class="specialty-card">
+          <div class="specialty-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
           </div>
           <h3>Expanded Professional Network</h3>
           <p>Direct access to top-tier contractors, stagers, mortgage lenders, inspectors, and off-market property opportunities across the East Bay.</p>
         </div>
-        <div class="duo-why-card">
-          <div class="duo-why-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+
+        <div class="specialty-card">
+          <div class="specialty-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           </div>
-          <h3>Proven Results</h3>
+          <h3>Proven Track Record</h3>
           <p>Decades of combined experience and a track record of record-breaking sales and seamless buyer wins in competitive East Bay markets.</p>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ==================== COMBINED STATS ==================== -->
-  <section class="duo-stats-section">
+  <!-- ==================== FEATURED TRANSACTIONS (3 PROPERTIES) ==================== -->
+  <section class="listings" id="portfolio">
     <div class="container">
-      <div class="duo-stats-grid">
-        <div class="duo-stat-item">
-          <div class="duo-stat-number">50+</div>
-          <div class="duo-stat-label">Combined Years of Experience</div>
+      <div class="listings-header reveal">
+        <span class="section-label">Featured Portfolio</span>
+        <h2 class="section-title">Recent Transactions &amp; Key Properties</h2>
+        <hr class="section-divider" style="margin-left: auto; margin-right: auto;">
+        <p>A curated selection of premier properties represented across Piedmont, Berkeley, and Oakland.</p>
+      </div>
+
+      <div class="listings-grid reveal-stagger">
+        <!-- Property 1 -->
+        <div class="listing-card">
+          <div class="listing-image-wrapper">
+            <img src="/images/listing-2.jpg" alt="110 Somerset Rd, Piedmont" width="600" height="450" loading="lazy">
+            <span class="listing-badge">Piedmont • $3,800,000</span>
+          </div>
+          <div class="listing-details">
+            <div class="listing-price">$3,800,000</div>
+            <div class="listing-address">110 Somerset Rd, Piedmont, CA</div>
+            <div class="listing-features">
+              <span class="listing-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v11a2 2 0 002 2h14"/><path d="M3 7l4-4h10l4 4"/><path d="M21 7v11a2 2 0 01-2 2"/><path d="M7 11h.01"/></svg>
+                5 Beds / 4 Baths
+              </span>
+              <span class="listing-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Piedmont Schools
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="duo-stat-item">
-          <div class="duo-stat-number">$200M+</div>
-          <div class="duo-stat-label">Combined Sales Volume</div>
+
+        <!-- Property 2 -->
+        <div class="listing-card">
+          <div class="listing-image-wrapper">
+            <img src="/images/hero.jpg" alt="Berkeley Hills Estate" width="600" height="450" loading="lazy">
+            <span class="listing-badge" style="background: var(--navy);">Berkeley Hills • $4,475,000</span>
+          </div>
+          <div class="listing-details">
+            <div class="listing-price">$4,475,000</div>
+            <div class="listing-address">Panoramic Bay View Residence, Berkeley</div>
+            <div class="listing-features">
+              <span class="listing-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v11a2 2 0 002 2h14"/><path d="M3 7l4-4h10l4 4"/><path d="M21 7v11a2 2 0 01-2 2"/><path d="M7 11h.01"/></svg>
+                Golden Gate Views
+              </span>
+              <span class="listing-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Architectural Home
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="duo-stat-item">
-          <div class="duo-stat-number">500+</div>
-          <div class="duo-stat-label">Families Served</div>
-        </div>
-        <div class="duo-stat-item">
-          <div class="duo-stat-number">5★</div>
-          <div class="duo-stat-label">Client Satisfaction Rating</div>
+
+        <!-- Property 3 -->
+        <div class="listing-card">
+          <div class="listing-image-wrapper">
+            <img src="/images/listing-1.jpg" alt="470 Spruce St, Berkeley" width="600" height="450" loading="lazy">
+            <span class="listing-badge">Rockridge / Oakland • Sold</span>
+          </div>
+          <div class="listing-details">
+            <div class="listing-price">Rockridge / Oakland</div>
+            <div class="listing-address">470 Spruce Street, East Bay, CA</div>
+            <div class="listing-features">
+              <span class="listing-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v11a2 2 0 002 2h14"/><path d="M3 7l4-4h10l4 4"/><path d="M21 7v11a2 2 0 01-2 2"/><path d="M7 11h.01"/></svg>
+                5 Beds / 3 Baths
+              </span>
+              <span class="listing-feature">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>
+                Craftsman Estate
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== AREAS WE COVER ==================== -->
-  <section class="duo-areas-section" id="areas">
+  <!-- ==================== RICH TERRITORY CARDS ==================== -->
+  <section class="duo-comparison" id="territory" style="background: var(--cream);">
     <div class="container">
-      <div style="text-align: center;">
-        <span class="section-label">Territory &amp; Expertise</span>
-        <h2 class="section-title">Areas We Cover Together</h2>
-        <hr class="section-divider" style="margin: 1rem auto;">
+      <div style="text-align: center;" class="reveal">
+        <span class="section-label">Territory Coverage</span>
+        <h2 class="section-title">Neighborhoods We Know Inside &amp; Out</h2>
+        <hr class="section-divider" style="margin-left: auto; margin-right: auto;">
+        <p style="margin: 0 auto; color: var(--gray-500);">Deep hyper-local knowledge in every premier East Bay community.</p>
       </div>
-      <div class="duo-areas-grid">
-        <div class="duo-area-card">
-          <span>Exclusive Enclave</span>
-          <h3>Piedmont</h3>
+
+      <div class="territory-grid reveal-stagger">
+        <!-- Card 1 -->
+        <div class="territory-card">
+          <div class="territory-img-box">
+            <img src="/images/listing-2.jpg" alt="Piedmont CA">
+            <span class="territory-badge">Exclusive Enclave</span>
+          </div>
+          <div class="territory-body">
+            <h3>Piedmont</h3>
+            <p>Tree-lined avenues, world-class public schools, and historic luxury estates.</p>
+          </div>
         </div>
-        <div class="duo-area-card">
-          <span>Culture &amp; Hills</span>
-          <h3>Berkeley</h3>
+
+        <!-- Card 2 -->
+        <div class="territory-card">
+          <div class="territory-img-box">
+            <img src="/images/listing-1.jpg" alt="Berkeley Hills CA">
+            <span class="territory-badge">Culture &amp; Hills</span>
+          </div>
+          <div class="territory-body">
+            <h3>Berkeley &amp; Berkeley Hills</h3>
+            <p>Architectural homes, vibrant cultural centers, and sweeping Golden Gate views.</p>
+          </div>
         </div>
-        <div class="duo-area-card">
-          <span>Urban Sophistication</span>
-          <h3>Oakland</h3>
+
+        <!-- Card 3 -->
+        <div class="territory-card">
+          <div class="territory-img-box">
+            <img src="/images/listing-3.jpg" alt="Oakland CA">
+            <span class="territory-badge">Urban Sophistication</span>
+          </div>
+          <div class="territory-body">
+            <h3>Oakland &amp; Rockridge</h3>
+            <p>Bustling food scene, historic Craftsman homes, and convenient commuter access.</p>
+          </div>
         </div>
-        <div class="duo-area-card">
-          <span>Hillside Views</span>
-          <h3>Kensington</h3>
+
+        <!-- Card 4 -->
+        <div class="territory-card">
+          <div class="territory-img-box">
+            <img src="/images/hero.jpg" alt="Kensington CA">
+            <span class="territory-badge">Hillside Views</span>
+          </div>
+          <div class="territory-body">
+            <h3>Kensington</h3>
+            <p>Quiet village feel with breathtaking SF Bay views and tight-knit community energy.</p>
+          </div>
         </div>
-        <div class="duo-area-card">
-          <span>Top School Districts</span>
-          <h3>Albany</h3>
+
+        <!-- Card 5 -->
+        <div class="territory-card">
+          <div class="territory-img-box">
+            <img src="/images/listing-2.jpg" alt="Albany CA">
+            <span class="territory-badge">Top School Districts</span>
+          </div>
+          <div class="territory-body">
+            <h3>Albany &amp; El Cerrito</h3>
+            <p>Family-friendly neighborhoods with Solano Avenue shops and top-rated schools.</p>
+          </div>
         </div>
-        <div class="duo-area-card">
-          <span>Bay Vistas</span>
-          <h3>El Cerrito</h3>
-        </div>
-        <div class="duo-area-card">
-          <span>Modern Living</span>
-          <h3>Emeryville</h3>
-        </div>
-        <div class="duo-area-card">
-          <span>Island Charm</span>
-          <h3>Alameda</h3>
+
+        <!-- Card 6 -->
+        <div class="territory-card">
+          <div class="territory-img-box">
+            <img src="/images/listing-1.jpg" alt="Alameda CA">
+            <span class="territory-badge">Island Charm</span>
+          </div>
+          <div class="territory-body">
+            <h3>Alameda &amp; Emeryville</h3>
+            <p>Waterfront living, Victorian architecture, and modern luxury urban lofts.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== TESTIMONIALS ==================== -->
-  <section class="testimonials" id="testimonials" style="background-color: var(--white);">
+  <section class="testimonials" id="testimonials">
     <div class="container">
-      <div style="text-align: center;">
-        <span class="section-label">Client Feedback</span>
-        <h2 class="section-title">What Our Clients Say</h2>
-        <hr class="section-divider" style="margin: 1rem auto;">
+      <div class="testimonials-header reveal">
+        <span class="section-label" style="color: var(--mauve-light);">Client Endorsements</span>
+        <h2 class="section-title">What Clients Say About Working With Us</h2>
+        <hr class="section-divider" style="margin-left: auto; margin-right: auto;">
+        <p>Verified feedback from home buyers, sellers, and investors across the East Bay.</p>
       </div>
-      <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg); margin-top: var(--space-xl);">
-        <div class="testimonial-card" style="background: var(--cream); padding: var(--space-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-          <p style="font-style: italic; color: var(--gray-700); margin-bottom: var(--space-md);">"Working with Victoria and Shelly was seamless. Their combined knowledge of the East Bay market is unmatched. They guided us through every step and secured an amazing home in Piedmont."</p>
-          <h4 style="color: var(--navy); margin-bottom: 0.25rem;">James &amp; Sarah M.</h4>
-          <span style="font-size: 0.8rem; color: var(--coral); font-weight: 600;">Buyers — Piedmont</span>
+
+      <div class="testimonials-slider reveal" id="testimonialSlider">
+        <div class="testimonials-track" id="testimonialTrack">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial-quote">Working with Victoria and Shelly was seamless. Their combined knowledge of the East Bay market is unmatched. They guided us through every step and secured an incredible home in Piedmont.</p>
+            <div class="testimonial-author">James &amp; Sarah M.</div>
+            <div class="testimonial-role">Buyers — Piedmont</div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testimonial-quote">Having two powerhouse agents was a total game-changer. Victoria's pricing strategy and Shelly's staging &amp; marketing got us well over asking price in Berkeley!</p>
+            <div class="testimonial-author">The Chen Family</div>
+            <div class="testimonial-role">Sellers — Berkeley</div>
+          </div>
         </div>
-        <div class="testimonial-card" style="background: var(--cream); padding: var(--space-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-          <p style="font-style: italic; color: var(--gray-700); margin-bottom: var(--space-md);">"Having two powerhouse agents was a total game-changer. Victoria's pricing strategy and Shelly's staging &amp; marketing got us well over asking price in Berkeley!"</p>
-          <h4 style="color: var(--navy); margin-bottom: 0.25rem;">The Chen Family</h4>
-          <span style="font-size: 0.8rem; color: var(--coral); font-weight: 600;">Sellers — Berkeley</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ACCORDION ==================== -->
+  <section class="duo-faq" id="faq">
+    <div class="container">
+      <div style="text-align: center;" class="reveal">
+        <span class="section-label">Frequently Asked Questions</span>
+        <h2 class="section-title">Everything You Need to Know</h2>
+        <hr class="section-divider" style="margin-left: auto; margin-right: auto;">
+      </div>
+
+      <div class="faq-wrapper reveal">
+        <!-- Question 1 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Does working with two agents cost more?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            No, absolutely not. You pay the exact same standard commission rate as working with a single agent. Victoria and Shelly split their representation fee internally, giving you twice the work, twice the coverage, and zero additional cost.
+          </div>
         </div>
-        <div class="testimonial-card" style="background: var(--cream); padding: var(--space-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-          <p style="font-style: italic; color: var(--gray-700); margin-bottom: var(--space-md);">"Their responsiveness is unreal. One of them was always available to answer questions or review disclosures. True concierge real estate service."</p>
-          <h4 style="color: var(--navy); margin-bottom: 0.25rem;">David R.</h4>
-          <span style="font-size: 0.8rem; color: var(--coral); font-weight: 600;">Buyer &amp; Investor — Oakland</span>
+
+        <!-- Question 2 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            How do Victoria &amp; Shelly divide duties during a sale?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Victoria and Shelly operate as a unified team. Victoria typically leads contract review, legal disclosure compliance, and financial strategy, while Shelly leads property staging, vendor prep, and local broker marketing. Both attend open houses and client consultations together.
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Which neighborhoods in the East Bay do you specialize in?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            We specialize across the entire core East Bay corridor, including Piedmont, Berkeley, Berkeley Hills, Oakland (Rockridge, Montclair, Grand Lake), Kensington, Albany, El Cerrito, Emeryville, and Alameda.
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            How do we get started working with the team?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Simply fill out the contact form below or call Victoria at (510) 710-8698. We will schedule a complimentary joint consultation to review your real estate goals, timeline, and property valuation.
+          </div>
         </div>
       </div>
     </div>
@@ -282,9 +881,9 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact-grid">
-        <div class="contact-info">
+        <div class="contact-info reveal-left">
           <span class="section-label">Get In Touch</span>
-          <h2 class="section-title">Schedule a Consultation</h2>
+          <h2 class="section-title">Work With Victoria &amp; Shelly</h2>
           <hr class="section-divider">
           <p>Ready to buy, sell, or invest in the East Bay? Connect with Victoria Tseng &amp; Shelly Flynn today for personalized market guidance and a custom strategy session.</p>
 
@@ -298,6 +897,7 @@
                 <p><a href="tel:+15107108698">(510) 710-8698</a></p>
               </div>
             </div>
+
             <div class="contact-item">
               <div class="contact-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -310,10 +910,10 @@
           </div>
         </div>
 
-        <div class="contact-form-wrapper">
-          <form class="contact-form" id="duoContactForm">
-            <h3 style="color: var(--navy); margin-bottom: 0.5rem; font-size: 1.8rem;">Work With Victoria &amp; Shelly</h3>
-            <p style="font-size: 0.9rem; color: var(--gray-700); margin-bottom: 1.5rem;">Fill out the form below and we will be in touch within 24 hours.</p>
+        <div class="contact-form-wrapper reveal-right">
+          <form class="contact-form" id="contactForm">
+            <h3 style="color: var(--navy); margin-bottom: 0.5rem; font-size: 1.8rem;">Schedule a Consultation</h3>
+            <p style="font-size: 0.9rem; color: var(--gray-700); margin-bottom: 1.5rem;">Fill out the form below and we will reach out within 24 hours.</p>
 
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -377,9 +977,10 @@
         <div class="footer-col">
           <h4>Quick Links</h4>
           <a href="#about">About the Duo</a>
+          <a href="#agents">Meet Agents</a>
           <a href="#why">Why Work With Us</a>
-          <a href="#areas">Territory</a>
-          <a href="#testimonials">Testimonials</a>
+          <a href="#territory">Territory</a>
+          <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </div>
 
@@ -412,7 +1013,20 @@
     </div>
   </footer>
 
-  <!-- Core Script -->
+  <!-- Scripts -->
   <script src="/script.js"></script>
+  <script>
+    // Accordion Interactivity
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
