@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The V Factor™ Selling System | Sell Your Home for Top Dollar | Victoria Tseng Realtor®</title>
+  <meta name="description" content="Sell your East Bay or San Francisco home for maximum value with Victoria Tseng's V Factor™ Selling System. 25+ years experience, Cornell Law background, proven 3-phase strategy.">
+  <meta name="keywords" content="V Factor, Victoria Tseng, Home Selling System, East Bay Realtor, San Francisco Real Estate, Sell Home Berkeley, Sell Home Piedmont, Sell Home Oakland, Home Valuation">
+  <meta name="author" content="Victoria Tseng">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The V Factor™ Selling System — Victory For You | Victoria Tseng Realtor®">
+  <meta property="og:description" content="Discover Victoria Tseng's proven 3-phase system for selling your East Bay home for maximum value with total clarity. Watch the video & get your strategy.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Page-Specific High-Converting Lead Page Styles -->
+  <style>
+    /* Reset reveal animations to prevent hidden elements */
+    .reveal, .reveal-left, .reveal-right, .reveal-stagger > * {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* Fixed Navigation */
+    .nav-solid-header {
+      background: var(--navy-dark) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Hero Lead Conversion Split Section */
+    .hero-lead-section {
+      padding-top: 130px;
+      padding-bottom: 70px;
+      background: linear-gradient(135deg, #0D1627 0%, #1B2A4A 60%, #111D35 100%);
+      color: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-lead-section::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(200, 55, 75, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-lead-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 992px) {
+      .hero-lead-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .hero-tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(200, 55, 75, 0.15);
+      border: 1px solid rgba(200, 55, 75, 0.4);
+      color: #E8CDD8;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-main-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      color: #FFFFFF;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero-main-title span {
+      color: #E8CDD8;
+      font-style: italic;
+    }
+
+    .hero-sub-text {
+      font-size: 1.1rem;
+      color: #E8CDD8;
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Video Player Box Above Fold */
+    .hero-video-box {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(212, 165, 181, 0.3);
+      background-color: #000;
+      margin-bottom: 1rem;
+    }
+
+    .hero-video-box video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-video-poster {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5;
+    }
+
+    .hero-video-poster::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(27, 42, 74, 0.3) 0%, rgba(17, 29, 53, 0.85) 100%);
+    }
+
+    .play-btn-large {
+      position: relative;
+      z-index: 6;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #C8374B;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px rgba(200, 55, 75, 0.8);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .play-btn-large svg { margin-left: 4px; }
+
+    .hero-video-poster:hover .play-btn-large {
+      transform: scale(1.1);
+      background: #D94A5D;
+    }
+
+    .poster-label {
+      position: relative;
+      z-index: 6;
+      color: #FFFFFF;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      margin-top: 0.75rem;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    /* Above-The-Fold Form Card */
+    .hero-form-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(212, 165, 181, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+    }
+
+    .form-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #FFFFFF;
+      margin-bottom: 0.25rem;
+      text-align: center;
+    }
+
+    .form-card-sub {
+      font-size: 0.85rem;
+      color: #E8CDD8;
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-form-card label {
+      color: #E8CDD8 !important;
+      font-size: 0.8rem !important;
+      font-weight: 600;
+      margin-bottom: 0.3rem !important;
+    }
+
+    .hero-form-card input,
+    .hero-form-card select,
+    .hero-form-card textarea {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: #FFFFFF !important;
+      font-size: 0.88rem !important;
+      padding: 0.75rem 1rem !important;
+      border-radius: 6px !important;
+    }
+
+    .hero-form-card input::placeholder,
+    .hero-form-card textarea::placeholder {
+      color: rgba(255, 255, 255, 0.45) !important;
+    }
+
+    .hero-form-card select option {
+      background: #111D35;
+      color: #FFFFFF;
+    }
+
+    /* Trust Stats Strip */
+    .trust-strip-section {
+      background: #111D35;
+      padding: 1.75rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .trust-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .trust-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+
+    .trust-item-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #C8374B;
+      line-height: 1;
+    }
+
+    .trust-item-label {
+      font-size: 0.78rem;
+      color: #E8CDD8;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.3rem;
+    }
+
+    /* Comparison Section: Traditional vs V-Factor */
+    .comparison-section {
+      padding: 80px 0;
+      background-color: #FAF7F4;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .comp-card {
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .comp-card-bad {
+      background: #FFFFFF;
+      border: 1px solid #E0E0E0;
+    }
+
+    .comp-card-good {
+      background: #1B2A4A;
+      color: #FFFFFF;
+      border: 2px solid #C8374B;
+      position: relative;
+    }
+
+    .comp-card-good::before {
+      content: 'RECOMMENDED FOR TOP DOLLAR';
+      position: absolute;
+      top: -14px;
+      right: 20px;
+      background: #C8374B;
+      color: #FFF;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.8rem;
+      border-radius: 12px;
+    }
+
+    .comp-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .comp-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .comp-list li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-bottom: 0.9rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .comp-card-bad li::before {
+      content: "✕";
+      position: absolute;
+      left: 0;
+      color: #C8374B;
+      font-weight: bold;
+    }
+
+    .comp-card-good li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #E8CDD8;
+      font-weight: bold;
+    }
+
+    /* Phase Cards */
+    .phases-main-section {
+      padding: 80px 0;
+      background: #FFFFFF;
+    }
+
+    .phase-card-box {
+      background: #FAF7F4;
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(27, 42, 74, 0.06);
+      border: 1px solid #E8E8E8;
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phase-card-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, #1B2A4A, #C8374B);
+    }
+
+    .phase-head-flex {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .phase-num-tag {
+      display: inline-block;
+      background: #1B2A4A;
+      color: #E8CDD8;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 0.4rem;
+    }
+
+    .phase-head-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+      color: #1B2A4A;
+    }
+
+    .phase-grid-cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .phase-sub-box {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid #E8E8E8;
+    }
+
+    .phase-sub-title {
+      font-weight: 700;
+      font-size: 1.02rem;
+      color: #1B2A4A;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .phase-sub-title svg { color: #C8374B; flex-shrink: 0; }
+
+    .phase-bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .phase-bullet-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.92rem;
+      color: #4A4A4A;
+    }
+
+    .phase-bullet-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #C8374B;
+      font-weight: bold;
+    }
+
+    .vquote-card {
+      background: linear-gradient(135deg, #111D35 0%, #1B2A4A 100%);
+      color: #FFFFFF;
+      padding: 1.5rem 2rem;
+      border-radius: 14px;
+      margin-top: 1.5rem;
+    }
+
+    .vquote-card p {
+      color: #E8CDD8;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .vquote-author-label {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 80px 0;
+      background: #FAF7F4;
+    }
+
+    .faq-item {
+      background: #FFFFFF;
+      border-radius: 12px;
+      border: 1px solid #E8E8E8;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      background: none;
+      border: none;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #1B2A4A;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.95rem;
+      color: #4A4A4A;
+      line-height: 1.7;
+      display: none;
+    }
+
+    .faq-answer.open { display: block; }
+
+    /* Sticky Bottom Mobile Bar */
+    .sticky-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #111D35;
+      border-top: 2px solid #C8374B;
+      padding: 0.75rem 1rem;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .sticky-bottom-bar { display: flex; }
+      body { padding-bottom: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="nav nav-solid-header" id="navbar">
+    <div class="nav-inner">
+      <a href="/index.html" class="nav-logo" aria-label="Victoria Tseng Realtor Home">
+        <img src="/images/SVG File-01.svg" alt="Victoria Tseng Realtor Logo" class="nav-logo-img">
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="/index.html#about">About Victoria</a>
+        <a href="#vfactor-overview">The V Factor™</a>
+        <a href="#comparison">Why V-Factor</a>
+        <a href="#three-phases">3-Phase System</a>
+        <a href="#faq">FAQ</a>
+        <div class="nav-cta">
+          <a href="#seller-consultation" class="btn btn-primary">Get Valuation Strategy</a>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO CONVERSION UNIT ==================== -->
+  <section class="hero-lead-section" id="vfactor-overview">
+    <div class="container">
+      <div class="hero-lead-grid">
+        <!-- Left Column: Video & Value Prop -->
+        <div>
+          <span class="hero-tag-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            East Bay Luxury Selling Blueprint
+          </span>
+          <h1 class="hero-main-title">Sell Your Home for Top Dollar With <span>The V Factor™</span></h1>
+          <p class="hero-sub-text">
+            <strong>"V" stands for Victoria — but it means Victory for You.</strong><br>
+            A simple, 3-phase strategic process engineered to maximize your home's value, streamline market prep, and deliver highest-and-best offers on offer day.
+          </p>
+
+          <!-- Embedded Video Player Above Fold -->
+          <div class="hero-video-box">
+            <div class="hero-video-poster" id="heroPoster" style="background-image: url('/images/hero.jpg');">
+              <div class="play-btn-large">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="poster-label">
+                Watch Victoria Explain The V Factor™ System (03:28)
+              </div>
+            </div>
+
+            <video id="heroVideo" controls preload="metadata" style="display: none;">
+              <source src="/videos/v-factor.mp4" type="video/mp4">
+              <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <!-- Right Column: High-Converting Above-the-Fold Lead Form -->
+        <div class="hero-form-card" id="seller-consultation">
+          <div class="form-card-title">Request Your V-Factor™ Strategy</div>
+          <div class="form-card-sub">Confidential valuation &amp; custom selling plan for your East Bay home.</div>
+
+          <form id="heroLeadForm" onsubmit="handleFormSubmit(event)">
+            <div style="margin-bottom: 0.75rem;">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" placeholder="e.g. Eleanor Vance" required style="width: 100%;">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <div>
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="eleanor@example.com" required style="width: 100%;">
+              </div>
+              <div>
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" placeholder="(510) 000-0000" required style="width: 100%;">
+              </div>
+            </div>
+
+            <div style="margin-bottom: 0.75rem;">
+              <label for="propertyAddress">Property Address or Neighborhood</label>
+              <input type="text" id="propertyAddress" name="propertyAddress" placeholder="e.g. 110 Somerset Rd, Piedmont CA" style="width: 100%;">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <div>
+                <label for="sellingGoal">Primary Goal *</label>
+                <select id="sellingGoal" name="sellingGoal" required style="width: 100%;">
+                  <option value="" disabled selected>Select goal...</option>
+                  <option value="Maximum Price">Maximum Price (Top Dollar)</option>
+                  <option value="Speed to Sell">Fastest Speed to Sell</option>
+                  <option value="Balance">Price &amp; Speed Balance</option>
+                  <option value="Exploring">Just Exploring</option>
+                </select>
+              </div>
+              <div>
+                <label for="timeline">Timeline</label>
+                <select id="timeline" name="timeline" style="width: 100%;">
+                  <option value="Immediate">Immediate (30 Days)</option>
+                  <option value="1-3 Months">1 to 3 Months</option>
+                  <option value="3-6 Months">3 to 6 Months</option>
+                  <option value="6+ Months">6+ Months / Planning</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+              <label for="message">Home Notes (Optional)</label>
+              <textarea id="message" name="message" rows="2" placeholder="Tell Victoria about any repairs or goals..." style="width: 100%;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.1rem 1.5rem; font-size: 0.88rem;">
+              Get My Custom V-Factor Valuation
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+
+            <div style="text-align: center; margin-top: 0.75rem; font-size: 0.75rem; color: #E8CDD8;">
+              🔒 100% Confidential. No spam. Direct consult with Victoria Tseng.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TRUST STATS STRIP ==================== -->
+  <section class="trust-strip-section">
+    <div class="container">
+      <div class="trust-strip-grid">
+        <div>
+          <div class="trust-item-val">25+</div>
+          <div class="trust-item-label">Years Real Estate Advisor &amp; Flipper</div>
+        </div>
+        <div>
+          <div class="trust-item-val">Cornell</div>
+          <div class="trust-item-label">Law School Graduate &amp; CA Bar</div>
+        </div>
+        <div>
+          <div class="trust-item-val">Sotheby's</div>
+          <div class="trust-item-label">Former In-House Counsel</div>
+        </div>
+        <div>
+          <div class="trust-item-val">100%</div>
+          <div class="trust-item-label">Communication &amp; Goal Clarity</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TRADITIONAL VS V-FACTOR COMPARISON ==================== -->
+  <section class="comparison-section" id="comparison">
+    <div class="container">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto;">
+        <span class="section-label">The Market Truth</span>
+        <h2 class="section-title">Why Some Homes Linger While Others Sell Fast for Top Dollar</h2>
+        <hr class="section-divider" style="margin: 1rem auto;">
+        <p style="color: #4A4A4A;">In Victoria's video, she highlights the science behind East Bay real estate performance. Compare the standard listing method with Victoria's V-Factor System:</p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Bad Way -->
+        <div class="comp-card comp-card-bad">
+          <h3 class="comp-title" style="color: #C8374B;">The Traditional Agent Method</h3>
+          <ul class="comp-list">
+            <li>Subjective pricing guesswork leading to price drops &amp; lingering</li>
+            <li>Unorganized home prep leaving sellers stressed with contractors</li>
+            <li>Basic MLS photos with zero lifestyle story or 4K videography</li>
+            <li>Passive waiting for offers with weak negotiation leverage</li>
+            <li>Escrow surprises and lack of clear communication</li>
+          </ul>
+        </div>
+
+        <!-- Good Way -->
+        <div class="comp-card comp-card-good">
+          <h3 class="comp-title" style="color: #FFFFFF;">The V Factor™ Selling System</h3>
+          <ul class="comp-list">
+            <li><strong>Scientific Price Strategy:</strong> Deep market velocity &amp; comp analysis</li>
+            <li><strong>Complete Vendor Management:</strong> Planning, budgeting &amp; scheduling handled for you</li>
+            <li><strong>Full-Court Press Marketing:</strong> Dedicated single-property site, 4K video &amp; vignettes</li>
+            <li><strong>Offer Day Strategy:</strong> Engineered to yield highest &amp; best terms</li>
+            <li><strong>Hands-Free Escrow:</strong> You sit back and watch your bank balance swell</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== THE 3 PHASES SYSTEM ==================== -->
+  <section class="phases-main-section" id="three-phases">
+    <div class="container" style="max-width: 1040px;">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="section-label">Systematic Approach</span>
+        <h2 class="section-title">Inside Victoria's 3-Phase V Factor™ System</h2>
+        <hr class="section-divider" style="margin: 1rem auto;">
+      </div>
+
+      <!-- Phase 1 -->
+      <div class="phase-card-box">
+        <div class="phase-head-flex">
+          <div>
+            <span class="phase-num-tag">Phase 1</span>
+            <h3 class="phase-head-title">Pre-Sale Preparation &amp; Strategic Pricing</h3>
+          </div>
+          <span style="font-size: 0.85rem; color: #C8374B; font-weight: 600; background: rgba(200,55,75,0.08); padding: 0.4rem 0.9rem; border-radius: 20px;">
+            Video Timestamp [00:47 - 01:57]
+          </span>
+        </div>
+
+        <p style="color: #4A4A4A; line-height: 1.7; margin-bottom: 1.25rem;">
+          Preparation begins with total alignment. Victoria prepares <strong>you</strong>, prepares <strong>her team</strong>, and prepares the <strong>home</strong> — handling all vendor coordination, budgeting, and planning.
+        </p>
+
+        <div class="phase-grid-cols">
+          <div class="phase-sub-box">
+            <div class="phase-sub-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Step 1: Goal Discovery
+            </div>
+            <ul class="phase-bullet-list">
+              <li>Establish <strong>Maximum Price vs. Speed to Sell</strong></li>
+              <li>High-ROI repair &amp; cosmetic improvement plan</li>
+              <li>Vendor budgeting &amp; timeline scheduling</li>
+            </ul>
+          </div>
+
+          <div class="phase-sub-box">
+            <div class="phase-sub-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              Step 2: Pricing Science &amp; Art
+            </div>
+            <ul class="phase-bullet-list">
+              <li>Comprehensive recent comparable sales analysis</li>
+              <li>Active East Bay market competition evaluation</li>
+              <li>Strategic price positioning so your home never lingers</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="vquote-card">
+          <p>"Have you ever noticed that a house can linger on the market while another house just sells right off the shelf? There's a science behind that, and I'll take you through that."</p>
+          <div class="vquote-author-label">— Victoria Tseng</div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="phase-card-box">
+        <div class="phase-head-flex">
+          <div>
+            <span class="phase-num-tag" style="background: #C8374B; color: #FFF;">Phase 2</span>
+            <h3 class="phase-head-title">Full-Court Press Marketing Campaign</h3>
+          </div>
+          <span style="font-size: 0.85rem; color: #C8374B; font-weight: 600; background: rgba(200,55,75,0.08); padding: 0.4rem 0.9rem; border-radius: 20px;">
+            Video Timestamp [01:58 - 02:43]
+          </span>
+        </div>
+
+        <p style="color: #4A4A4A; line-height: 1.7; margin-bottom: 1.25rem;">
+          Once prepared, Victoria launches a high-impact, multi-channel marketing push engineered to tell your property's story and inspire high-net-worth buyers.
+        </p>
+
+        <div class="phase-grid-cols">
+          <div class="phase-sub-box">
+            <div class="phase-sub-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              High-End Media Production
+            </div>
+            <ul class="phase-bullet-list">
+              <li>Dedicated single-property custom website</li>
+              <li>Architectural photography &amp; 4K cinematic video</li>
+              <li>Detailed site plans, floor plans &amp; 3D walkthroughs</li>
+            </ul>
+          </div>
+
+          <div class="phase-sub-box">
+            <div class="phase-sub-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Storytelling &amp; Multi-Channel Reach
+            </div>
+            <ul class="phase-bullet-list">
+              <li>Capturing emotional lifestyle vignettes of your home</li>
+              <li>Targeted print &amp; digital ad campaigns</li>
+              <li>Global buyer network &amp; social media dissemination</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="vquote-card">
+          <p>"The goal of marketing is to tell the story of the house, garner as much interest and inspiration as possible, and yield the highest and best offers on offer day."</p>
+          <div class="vquote-author-label">— Victoria Tseng</div>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="phase-card-box">
+        <div class="phase-head-flex">
+          <div>
+            <span class="phase-num-tag" style="background: #2A3F6A;">Phase 3</span>
+            <h3 class="phase-head-title">Offer Review &amp; Hands-Free Escrow Management</h3>
+          </div>
+          <span style="font-size: 0.85rem; color: #C8374B; font-weight: 600; background: rgba(200,55,75,0.08); padding: 0.4rem 0.9rem; border-radius: 20px;">
+            Video Timestamp [02:44 - 03:14]
+          </span>
+        </div>
+
+        <p style="color: #4A4A4A; line-height: 1.7; margin-bottom: 1.25rem;">
+          When offer day arrives, Victoria reviews terms to select the highest and best contract. From there, her experienced team manages every detail through closing.
+        </p>
+
+        <div class="phase-grid-cols">
+          <div class="phase-sub-box">
+            <div class="phase-sub-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              Offer Evaluation
+            </div>
+            <ul class="phase-bullet-list">
+              <li>Comprehensive offer comparison &amp; term optimization</li>
+              <li>Selecting highest price &amp; most secure terms</li>
+            </ul>
+          </div>
+
+          <div class="phase-sub-box">
+            <div class="phase-sub-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              Escrow Oversight
+            </div>
+            <ul class="phase-bullet-list">
+              <li>1-week to 1-month escrow management</li>
+              <li>Regular milestone updates while your bank balance swells</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="vquote-card">
+          <p>"Your role basically at that point is to just hang tight, wait until closing day, and watch your bank balance swell."</p>
+          <div class="vquote-author-label">— Victoria Tseng</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ SECTION ==================== -->
+  <section class="faq-section" id="faq">
+    <div class="container" style="max-width: 860px;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="section-label">Common Questions</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <hr class="section-divider" style="margin: 0.75rem auto;">
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What makes Victoria's V-Factor System different from standard agents?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          Victoria brings 25 years of real estate experience as an investor, owner, flipper, and former Sotheby's in-house legal counsel. Instead of guesswork, her V-Factor system combines scientific market analytics with high-end media storytelling and complete vendor management.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How do we decide between Maximum Price vs. Speed to Sell?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          During Step 1 of Phase 1, Victoria conducts a targeted Q&amp;A consultation with you to align on your timeline, financial goals, and preferred level of pre-sale improvements. This guides the exact repair budget, staging, and pricing strategy.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do I have to manage contractors or vendors during home prep?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          No. Victoria and her expert team coordinate all trusted outside vendors, budgeting, staging, and scheduling, presenting clear choices so you can make informed decisions stress-free.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What areas does Victoria specialize in?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          Victoria specializes in Piedmont, Berkeley, Oakland, Alamo, and the greater East Bay &amp; San Francisco Bay Area.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/index.html" class="nav-logo" aria-label="Victoria Tseng Realtor Home">
+            <img src="/images/SVG File-01.svg" alt="Victoria Tseng Realtor Logo" class="nav-logo-img" style="filter: brightness(0) invert(1);">
+          </a>
+          <p class="footer-bio">Victoria Tseng, Realtor® (DRE# 01977600). Delivering victory for buyers, sellers, and real estate investors across Piedmont, Berkeley, Oakland, and the SF Bay Area.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/index.html#about">About Victoria</a></li>
+            <li><a href="#vfactor-overview">The V Factor™</a></li>
+            <li><a href="/index.html#listings">Featured Portfolio</a></li>
+            <li><a href="#seller-consultation">Seller Consultation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:5105550199">(510) 555-0199</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:victoria@victoriatseng.com">victoria@victoriatseng.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 Victoria Tseng, Realtor®. All rights reserved. Equal Housing Opportunity.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Bottom Mobile Conversion Bar -->
+  <div class="sticky-bottom-bar">
+    <div style="color: #FFF; font-weight: 600; font-size: 0.85rem;">Sell With Victoria Tseng</div>
+    <a href="#seller-consultation" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.78rem;">Get V-Factor Plan</a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/script.js"></script>
+  <script>
+    // Video Player Interactive Toggle
+    const heroPoster = document.getElementById('heroPoster');
+    const heroVideo = document.getElementById('heroVideo');
+
+    if (heroPoster && heroVideo) {
+      heroPoster.addEventListener('click', () => {
+        heroPoster.style.display = 'none';
+        heroVideo.style.display = 'block';
+        heroVideo.play();
+      });
+    }
+
+    // FAQ Accordion Toggle
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = answer.classList.toggle('open');
+      const icon = btn.querySelector('svg');
+      if (icon) {
+        icon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    }
+
+    // Form Submission Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const formCard = document.querySelector('.hero-form-card');
+      formCard.innerHTML = `
+        <div style="text-align: center; padding: 2rem 1rem;">
+          <div style="width: 60px; height: 60px; background: #C8374B; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; box-shadow: 0 0 25px rgba(200,55,75,0.5);">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 style="color: white; font-size: 1.8rem; margin-bottom: 0.75rem; font-family: 'Cormorant Garamond', serif;">Strategy Consultation Requested!</h3>
+          <p style="color: #E8CDD8; font-size: 0.95rem; line-height: 1.6;">
+            Thank you! Victoria Tseng will personally review your home details and contact you shortly to schedule your custom V-Factor™ valuation session.
+          </p>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
